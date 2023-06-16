@@ -1,15 +1,16 @@
 const express = require("express");
+const path = require("path");
 const app = express();
-const port = 3000;
+const port = 4000;
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Welcome!!");
 });
-app.get("/contact", (req, res) => {
-  res.send("This is contact Page!");
+app.get("/ashish", (req, res) => {
+  res.sendFile(path.join(__dirname, "ashish.html"));
 });
-app.get("/login", (req, res) => {
-  res.send("This is login Page !");
+app.get("/nitin", (req, res) => {
+  res.sendFile(path.join(__dirname, "nitin.html"));
 });
 
 app.listen(port, () => {
