@@ -10,9 +10,18 @@
 Install Nodemon: Ensure you have Nodemon installed globally on your system. You can install it using npm (Node Package Manager) 
 by running the following command in your terminal:
 
+
 Copy code
-```npm install -g nodemon
 ```
+npm install -D nodemon
+```
+
+
+
+```
+npm install -g nodemon
+```
+
 Set up your Express application: Create a new Express application or open your existing Express project.
 
 Configure Nodemon: Open your project's root directory and create a new file called nodemon.json. In this file, 
