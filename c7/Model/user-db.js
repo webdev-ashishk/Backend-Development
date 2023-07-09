@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 // mongoose connection
-const dbconnection = mongoose.connect("mongodb://127.0.0.1:27017/tasks");
+const dbconnection = mongoose.connect("mongodb://127.0.0.1:27017/c7");
 //creating schema
 const taskSchema = new Schema({
   name: { type: String, required: true },
