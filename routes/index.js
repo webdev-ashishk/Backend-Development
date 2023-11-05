@@ -50,7 +50,9 @@ router.post("/login", async (req, res) => {
   console.log("login user data", userGmail);
   // if (userGmail) return res.redirect("/login");
   if (!userGmail) return res.redirect("/register");
-  const isMatch = password === userGmail.password;
+  const isMatch = password == userGmail.password;
+  console.log("userGmail password is " + userGmail.password);
+  console.log("user typed password" + password);
   console.log("isMatch: " + isMatch);
   if (!isMatch) return res.redirect("/login");
   if (isMatch) return res.redirect("/logout");
