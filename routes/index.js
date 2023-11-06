@@ -4,7 +4,9 @@ var router = express.Router();
 const LoginModel = require("../models/login.models.js");
 const RegisterModel = require("../models/register.models.js");
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", function (req, res) {
+  const token = req.cookies.token;
+  console.log("token : " + token);
   res.render("index");
 });
 /* Get Form-page. */
@@ -39,6 +41,10 @@ router.post("/register", async (req, res) => {
   };
   await RegisterModel.create(obj);
   // res.send("register is completed");
+  res.cookie("token", "Singh", {
+    expires: new Date(Date.now() + 900000),
+    httpOnly: true,
+  });
   res.redirect("/login");
 });
 router.post("/login", async (req, res) => {
@@ -59,6 +65,7 @@ router.post("/login", async (req, res) => {
 });
 router.get("/logout", (req, res) => {
   // res.redirect("/");
+
   res.render("logout");
 });
 module.exports = router;
